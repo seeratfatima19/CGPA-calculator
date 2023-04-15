@@ -1,0 +1,23 @@
+package com.example.cgpacalculatorpucit;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+public class HomeActivity extends AppCompatActivity {
+
+    Spinner semesters;
+    ArrayAdapter<CharSequence> adapter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+        semesters = findViewById(R.id.semesterSpinner);
+        adapter = ArrayAdapter.createFromResource(this, R.array.Semester, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        semesters.setAdapter(adapter);
+
+    }
+}
