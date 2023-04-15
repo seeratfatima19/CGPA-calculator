@@ -14,10 +14,19 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //make a dropdown using Spinner
         semesters = findViewById(R.id.semesterSpinner);
         adapter = ArrayAdapter.createFromResource(this, R.array.Semester, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         semesters.setAdapter(adapter);
+
+        // getting the entered semester
+
+        String sem = semesters.getSelectedItem().toString();
+        int sem_num = Integer.parseInt(sem);
+
+
 
     }
 }
