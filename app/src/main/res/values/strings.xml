@@ -11,4 +11,16 @@
         <item>8</item>
 
     </string-array>
+
+    <string-array name="Marks">
+        <item>0-50</item>
+        <item>51-54</item>
+        <item>55-59</item>
+        <item>60-64</item>
+        <item>65-69</item>
+        <item>70-74</item>
+        <item>75-79</item>
+        <item>80-84</item>
+        <item>85-100</item>
+    </string-array>
 </resources>
