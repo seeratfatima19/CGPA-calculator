@@ -1,2 +1,2 @@
 # CGPA-calculator
-A cgpa calculator app 
+A simple cgpa calculator app 
