@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,7 +35,6 @@ public class HomeActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         semesters.setAdapter(adapter);
-
 
         View.OnClickListener onClickListener  = new View.OnClickListener() {
             @Override
