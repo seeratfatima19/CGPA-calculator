@@ -132,7 +132,7 @@ public class CalculationScreen extends AppCompatActivity {
                         crHrGp[i] = crHr[i] * 3.7f;
                         crHrSum = crHrSum + crHr[i];
                         crHrGpSum = crHrGpSum + crHrGp[i];
-                    } else if (grade.equals("80-100")) {
+                    } else if (grade.equals("85-100")) {
                         crHrGp[i] = crHr[i] * 4.0f;
                         crHrSum = crHrSum + crHr[i];
                         crHrGpSum = crHrGpSum + crHrGp[i];
@@ -140,8 +140,9 @@ public class CalculationScreen extends AppCompatActivity {
                 }
 
                 semGpa = crHrGpSum/crHrSum;
+                System.out.println("Sem gpa: "+semGpa);
                 cgpa = round((finalPrevGpaSum +semGpa /currentSemester));
-
+                System.out.println("CGPA: "+semGpa);
 
                 textView = (TextView)findViewById(R.id.cgpaView);
                 textView.setText("CGPA:"+cgpa);
