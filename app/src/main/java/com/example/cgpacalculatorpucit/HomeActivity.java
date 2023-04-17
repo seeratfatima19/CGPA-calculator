@@ -28,21 +28,22 @@ public class HomeActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
         //make a dropdown using Spinner
-        semesters = findViewById(R.id.semesterSpinner);
+        semesters = (Spinner)findViewById(R.id.semesterSpinner);
         adapter = ArrayAdapter.createFromResource(this, R.array.Semester, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         semesters.setAdapter(adapter);
-        // getting the entered semester
 
-        String sem = semesters.getSelectedItem().toString();
-        int sem_num = Integer.parseInt(sem);
 
         View.OnClickListener onClickListener  = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent nextIntent = new Intent(HomeActivity.this,CalculationScreen.class);
+                // getting the entered semester
+                String sem = semesters.getSelectedItem().toString();
+                int sem_num = Integer.parseInt(sem);
                 nextIntent.putExtra("semester",sem_num);
+
                 String getVal;
 
                 editText= findViewById(R.id.editTextNumber1);

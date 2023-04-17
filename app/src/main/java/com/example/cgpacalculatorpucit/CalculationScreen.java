@@ -141,11 +141,13 @@ public class CalculationScreen extends AppCompatActivity {
 
                 semGpa = crHrGpSum/crHrSum;
                 System.out.println("Sem gpa: "+semGpa);
-                cgpa = round((finalPrevGpaSum +semGpa /currentSemester));
-                System.out.println("CGPA: "+semGpa);
+                cgpa = (finalPrevGpaSum +semGpa) /currentSemester;
+                System.out.println("currentSemster: "+currentSemester);
+                System.out.println("previous gpa sum : "+finalPrevGpaSum);
+                System.out.println("semester gpa: "+semGpa);
 
                 textView = (TextView)findViewById(R.id.cgpaView);
-                textView.setText("CGPA:"+cgpa);
+                textView.setText("CGPA:"+ String.format("%.2f",cgpa));
             }
         };
 
