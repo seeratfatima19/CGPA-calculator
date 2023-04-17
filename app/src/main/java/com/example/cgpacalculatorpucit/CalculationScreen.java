@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CalculationScreen extends AppCompatActivity {
 
@@ -70,12 +71,17 @@ public class CalculationScreen extends AppCompatActivity {
                 int[] crHrId={R.id.editTextNumberDecimal,R.id.editTextNumberDecimal2,R.id.editTextNumberDecimal3,R.id.editTextNumberDecimal4,R.id.editTextNumberDecimal5,R.id.editTextNumberDecimal6,R.id.editTextNumberDecimal7};
                 float[] crHr = new float[8];
 
-                for(int i=0;i<crHrId.length;i++)
-                {
-                    crHrView = (EditText)findViewById(crHrId[i]);
+                for(int i=0;i<crHrId.length;i++) {
+                    crHrView = (EditText) findViewById(crHrId[i]);
                     String val = crHrView.getText().toString();
 
-                    if(val.equals("")){continue;}
+                    if (val.equals("")) {
+                        continue;
+                    } else if (Float.parseFloat(val) > 3) {
+                        Toast.makeText(getApplicationContext(), "Invalid Inputs", Toast.LENGTH_SHORT).show();
+
+                    }
+
                     else {
                         crHr[i] = Float.parseFloat(val);
                     }
@@ -142,12 +148,15 @@ public class CalculationScreen extends AppCompatActivity {
                 semGpa = crHrGpSum/crHrSum;
                 System.out.println("Sem gpa: "+semGpa);
                 cgpa = (finalPrevGpaSum +semGpa) /currentSemester;
-                System.out.println("currentSemster: "+currentSemester);
-                System.out.println("previous gpa sum : "+finalPrevGpaSum);
-                System.out.println("semester gpa: "+semGpa);
+                if(cgpa>4)
+                {
+                    Toast.makeText(getApplicationContext(), "Invalid Inputs Given.", Toast.LENGTH_SHORT).show();
+                }
 
-                textView = (TextView)findViewById(R.id.cgpaView);
-                textView.setText("CGPA:"+ String.format("%.2f",cgpa));
+                else {
+                    textView = (TextView) findViewById(R.id.cgpaView);
+                    textView.setText("CGPA:" + String.format("%.2f", cgpa));
+                }
             }
         };
 

@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -36,6 +37,8 @@ public class HomeActivity extends AppCompatActivity {
 
         semesters.setAdapter(adapter);
 
+        int[] ids= {R.id.editTextNumber1,R.id.editTextNumber2,R.id.editTextNumber3,R.id.editTextNumber4,R.id.editTextNumber5,R.id.editTextNumber6,R.id.editTextNumber7,R.id.editTextNumber8};
+        String[] keys = {"S1","S2","S3","S4","S5","S6","S7","S8"};
         View.OnClickListener onClickListener  = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,50 +48,22 @@ public class HomeActivity extends AppCompatActivity {
                 int sem_num = Integer.parseInt(sem);
                 nextIntent.putExtra("semester",sem_num);
 
-                String getVal;
+                String getVal="";
 
-                editText= findViewById(R.id.editTextNumber1);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S1",Float.parseFloat(getVal));
+                for(int i=0;i<ids.length;i++)
+                {
 
-                editText= findViewById(R.id.editTextNumber2);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S2",Float.parseFloat(getVal));
+                    editText= findViewById(ids[i]);
+                    getVal= editText.getText().toString();
+                    nextIntent.putExtra(keys[i],Float.parseFloat(getVal));
 
-                editText= findViewById(R.id.editTextNumber3);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S3",Float.parseFloat(getVal));
+                }
+                if(Float.parseFloat(getVal)>4) {
+                    Toast.makeText(getApplicationContext(), "Invalid Inputs", Toast.LENGTH_SHORT).show();
 
-                editText= findViewById(R.id.editTextNumber4);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S4",Float.parseFloat(getVal));
-
-                editText= findViewById(R.id.editTextNumber4);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S5",Float.parseFloat(getVal));
-
-                editText= findViewById(R.id.editTextNumber4);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S6",Float.parseFloat(getVal));
-
-                editText= findViewById(R.id.editTextNumber5);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S5",Float.parseFloat(getVal));
-
-                editText= findViewById(R.id.editTextNumber6);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S6",Float.parseFloat(getVal));
-
-                editText= findViewById(R.id.editTextNumber7);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S7",Float.parseFloat(getVal));
-
-                editText= findViewById(R.id.editTextNumber8);
-                getVal= editText.getText().toString();
-                nextIntent.putExtra("S8",Float.parseFloat(getVal));
-
-
-                startActivity(nextIntent);
+                }
+                else
+                    startActivity(nextIntent);
             }
         };
 
