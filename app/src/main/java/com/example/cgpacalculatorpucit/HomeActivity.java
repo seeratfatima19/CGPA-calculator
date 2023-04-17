@@ -1,6 +1,7 @@
 package com.example.cgpacalculatorpucit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
 
     Spinner semesters;
     ArrayAdapter<CharSequence> adapter;
-    Button nextButton;
+    AppCompatButton nextButton;
     EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +92,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         };
 
-        nextButton= (Button) findViewById(R.id.nextButton);
+        nextButton= (AppCompatButton) findViewById(R.id.nextButton);
         nextButton.setOnClickListener(onClickListener);
 
 
