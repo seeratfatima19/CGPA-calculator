@@ -20,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     Spinner semesters;
     ArrayAdapter<CharSequence> adapter;
     Button nextButton;
+    EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,50 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent nextIntent = new Intent(HomeActivity.this,CalculationScreen.class);
+                nextIntent.putExtra("semester",sem_num);
+                String getVal;
+
+                editText= findViewById(R.id.editTextNumber1);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S1",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber2);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S2",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber3);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S3",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber4);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S4",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber4);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S5",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber4);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S6",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber5);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S5",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber6);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S6",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber7);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S7",Float.parseFloat(getVal));
+
+                editText= findViewById(R.id.editTextNumber8);
+                getVal= editText.getText().toString();
+                nextIntent.putExtra("S8",Float.parseFloat(getVal));
+
+
                 startActivity(nextIntent);
             }
         };
