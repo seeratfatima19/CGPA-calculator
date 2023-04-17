@@ -283,8 +283,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.797" />
 
-    <Button
-        android:id="@+id/button"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CALCULATE"
@@ -295,23 +295,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.932" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#00DDDDDD"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:shadowColor="#FBFAFA"
+    <TextView
+        android:id="@+id/cgpaView"
+        android:layout_width="156dp"
+        android:layout_height="55dp"
         android:text="CGPA:"
-        android:textColor="#FDFDFD"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+        app:layout_constraintVertical_bias="0.943" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
