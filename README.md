@@ -1,5 +1,10 @@
 # CGPA-calculator
 A simple cgpa calculator app 
+- Enter the number of Semesters you've completed
+- Enter CGPA of all previous semesters, and grades of cources in this semester.
+- Calculates the CGPA for current semester
+*Basically made for an assignment of mobile computing
+
 
 UI of th app:
 
